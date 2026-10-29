@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CleanMagnifier.Tests/CleanMagnifier.Tests.csproj" />
+  <Project Path="CleanMagnifier/CleanMagnifier.csproj" />
+</Solution>

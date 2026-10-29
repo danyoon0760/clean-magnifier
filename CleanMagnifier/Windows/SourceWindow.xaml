@@ -1,0 +1,16 @@
+<local:LensWindow x:Class="CleanMagnifier.Windows.SourceWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:local="clr-namespace:CleanMagnifier.Windows"
+                  xmlns:chrome="clr-namespace:CleanMagnifier.Controls"
+                  Title="돋보기 영역" Width="256" Height="160">
+    <!-- 보이는 사각형 = 캡처 영역. 테두리는 그 바깥 여백에 그려서 내용을 가리지 않는다. -->
+    <Grid x:Name="Surface" Background="Transparent">
+        <!-- 거의 투명한 배경: 안쪽 어디를 잡아도 이동되도록 클릭을 받는다 (캡처에선 제외됨). -->
+        <Border Margin="{x:Static chrome:ChromeLayout.SourceHitArea}" Background="#01000000" CornerRadius="6" />
+        <Border x:Name="Halo" Margin="{x:Static chrome:ChromeLayout.SourceHalo}" BorderThickness="1" CornerRadius="4"
+                BorderBrush="#40000000" IsHitTestVisible="False" />
+        <Border x:Name="Frame" Margin="{x:Static chrome:ChromeLayout.SourceFrame}" BorderThickness="2" CornerRadius="3"
+                BorderBrush="{DynamicResource AccentBrush}" IsHitTestVisible="False" />
+    </Grid>
+</local:LensWindow>

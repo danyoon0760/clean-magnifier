@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <!-- 알림 영역 아이콘(NotifyIcon)에만 쓴다 -->
+    <UseWindowsForms>true</UseWindowsForms>
+    <!-- WFO0003: WinForms 앱용 DPI 권고. 이 앱은 WPF 라서 매니페스트의 PerMonitorV2 설정이 맞다 -->
+    <NoWarn>$(NoWarn);WFO0003</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyTitle>깔끔한 돋보기</AssemblyTitle>
+    <Product>깔끔한 돋보기</Product>
+    <Version>1.0.0</Version>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\app.ico" />
+    <None Remove="Assets\app.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="CleanMagnifier.Tests" />
+    <!-- WinForms/GDI+ 형식이 WPF 형식(Color, Brush, Application 등)과 겹치지 않게 전역 using 에서 뺀다 -->
+    <Using Remove="System.Drawing" />
+    <Using Remove="System.Windows.Forms" />
+  </ItemGroup>
+
+</Project>

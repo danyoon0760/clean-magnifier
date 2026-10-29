@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="MenuBackBrush" Color="#2B2B2E" />
+    <SolidColorBrush x:Key="MenuBorderBrush" Color="#24FFFFFF" />
+    <SolidColorBrush x:Key="MenuTextBrush" Color="#F2F2F5" />
+    <SolidColorBrush x:Key="MenuSubTextBrush" Color="#9C9CA3" />
+    <SolidColorBrush x:Key="MenuHoverBrush" Color="#14FFFFFF" />
+    <SolidColorBrush x:Key="MenuSeparatorBrush" Color="#1AFFFFFF" />
+    <SolidColorBrush x:Key="ViewerBackBrush" Color="#1C1C1E" />
+    <SolidColorBrush x:Key="ViewerOutlineBrush" Color="#38FFFFFF" />
+</ResourceDictionary>
