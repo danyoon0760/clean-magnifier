@@ -72,9 +72,7 @@ internal static class ViewerMenu
 
         menu.Items.Add(Item("항상 위", Set(x => x.Topmost = !x.Topmost), s.Topmost));
         menu.Items.Add(Item("위치 초기화", ctl.ResetLayout));
-        var exit = Item("종료", () => Application.Current.Dispatcher.BeginInvoke(ctl.Exit));
-        exit.InputGestureText = "Esc";
-        menu.Items.Add(exit);
+        menu.Items.Add(Item("종료", () => Application.Current.Dispatcher.BeginInvoke(ctl.Exit)));
     }
 
     /// <summary>오른쪽에 현재 값이 보이는 하위 메뉴.</summary>

@@ -19,6 +19,7 @@ public partial class ViewerWindow : LensWindow
     internal ViewerWindow(MagnifierController controller) : base(controller)
     {
         InitializeComponent();
+        ShowInTaskbar = true; // 앱 대표 창. 소스 창은 이 창에 소유되어 작업 표시줄에 따로 뜨지 않는다.
         AttachChrome(Surface, LensPart.Viewer);
         Lens.Background = _brush;
 

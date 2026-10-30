@@ -1,7 +1,6 @@
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Windows;
-using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
 using CleanMagnifier.Controls;
@@ -92,13 +91,8 @@ public abstract class LensWindow : Window
             CaptureExclusionFailed = true;
             ErrorLog.Write(new Win32Exception(Marshal.GetLastPInvokeError(), $"{GetType().Name} 를 캡처에서 제외하지 못했습니다."));
         }
-        Native.SetExStyle(Handle, Native.WS_EX_TOOLWINDOW, true); // Alt+Tab 목록에서 숨김
-    }
-
-    protected override void OnKeyDown(KeyEventArgs e)
-    {
-        base.OnKeyDown(e);
-        if (e.Key == Key.Escape) Controller.Exit();
+        // 작업 표시줄에 없는 창은 Alt+Tab 목록에서도 숨긴다. 도구 창이면 작업 표시줄 버튼도 사라진다.
+        if (!ShowInTaskbar) Native.SetExStyle(Handle, Native.WS_EX_TOOLWINDOW, true);
     }
 
     protected override void OnDpiChanged(DpiScale oldDpi, DpiScale newDpi)
