@@ -47,3 +47,7 @@ dotnet publish CleanMagnifier -p:PublishProfile=Portable
 ```
 
 `publish-to-desktop.ps1` 은 Desktop 프로필로 빌드한 뒤 바탕화면에 `깔끔한 돋보기.exe` 로 복사합니다.
+
+## 라이선스
+
+[MIT](LICENSE)
