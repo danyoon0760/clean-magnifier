@@ -4,3 +4,4 @@ publish/
 publish-portable/
 *.user
 .vs/
+dist/
